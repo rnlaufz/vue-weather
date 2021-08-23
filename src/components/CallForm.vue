@@ -19,8 +19,8 @@ export default {
     position: absolute;
     top: 0;
     right: 1%;
-    width: 10%;
-    height: 10%;
+    width: 30px;
+    height: 30px;
     border-radius: 5px;
     border: none;
     background: cornflowerblue;

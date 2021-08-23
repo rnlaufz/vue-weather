@@ -33,7 +33,7 @@ export default {
   .location-form {
     position: relative;
     border-radius: 5px;
-    box-shadow: 0 0 10px cornflowerblue;
+    box-shadow: 0 0 10px #3269c4;
     max-width: 100%;
     max-height: 100%;
     background: #3269c4;
@@ -48,8 +48,8 @@ export default {
   align-self: flex-end;
   position: relative;
   top: 0;
-  width: 15%;
-  height: 15%;
+  width: 30px;
+  height: 30px;
   border-radius: 5px;
   border: none;
   background: cornflowerblue;
@@ -65,7 +65,7 @@ export default {
   padding: 10px;
   border: none;
   border-radius: 3px;
-  font-size: 1em;
+  font-size: 100%;
 }
 .location-form-city:focus, .location-form-get-location-btn:focus{
   outline: 0;
@@ -77,7 +77,7 @@ export default {
   height: 30px;
   padding: 5px;
   font-family: inherit;
-  font-size: 1em;
+  font-size: 100%;
   font-weight: 500;
   border: none;
   border-radius: 3px;

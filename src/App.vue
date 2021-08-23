@@ -103,13 +103,13 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
- html, body {
+ html, body, #app {
   width: 100%;
   height: 100%;
 }
 .container {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,12 +118,12 @@ export default {
   position: relative;
   border-radius: 5px;
   box-shadow: 0 0 10px cornflowerblue;
-  max-width: 40%;
-  max-height: 60%;
+  max-width: 100%;
+  max-height: 100%;
   background: #3269c4;
   color: #FFF;
   border: #3269c4 solid 3px;
-
+  justify-self: center;
 
 }
 .weather-card-main, .weather-card-form {
