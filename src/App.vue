@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     getData: async function (){
-          await fetch(`http://api.weatherapi.com/v1/current.json?key=${this.weatherAPIKey}&q=${this.city}`)
+          await fetch(`https://api.weatherapi.com/v1/current.json?key=${this.weatherAPIKey}&q=${this.city}`)
             .then((res) => {
               return res.json()
             })
@@ -86,7 +86,7 @@ export default {
   // Вызов по загрузке
   created: function() {
     this.getData()
-  },
+  }
 }
 </script>
 

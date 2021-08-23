@@ -8,11 +8,9 @@
     </li>
     <li key="2" class="weather-data-name">{{condition}}</li>
     <li key="3" class="weather-data-location">{{location}}</li>
-      <br />
     <li key="4" class="weather-data-temperature">{{temperature}}&deg;</li>
-      <br />
     </ul>
-<!-- Детали  -->
+    <!-- Детали  -->
     <ul class="weather-data-details">
       <li key="5" class="weather-data-details-humidity">
         <font-awesome-icon icon="tint" />
@@ -86,7 +84,10 @@ ul li {font-size: 2em;}
   font-size: 1em;
   opacity: 0.4;
 }
-.weather-data-temperature{font-size: 3em;}
+.weather-data-temperature{
+  font-size: 3em;
+  margin: 25px 0;
+}
 /* Доп. значения */
 .weather-data-details {
   width: 100%;
