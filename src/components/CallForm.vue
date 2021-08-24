@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-call-location-form" @click="openModal">
+  <button class="app__container__weather-card__main__button-call-form zero-top cursor-pointer height-30 border-none shadow-blue-focus blue-white-theme border-rad-s" @click="openModal">
     <font-awesome-icon icon="search-location"/>
   </button>
 </template>
@@ -14,20 +14,13 @@ export default {
 </script>
 
 <style>
-  .btn-call-location-form {
-    cursor: pointer;
+  .app__container__weather-card__main__button-call-form {
     position: absolute;
-    top: 0;
     right: 1%;
     width: 30px;
-    height: 30px;
     border-radius: 5px;
-    border: none;
-    background: cornflowerblue;
-    color: #FFFFFF;
     font-size: 0.9em;
     padding: 0.3em;
     margin: 0.5em 0;
   }
-  .btn-call-location-form:focus{outline: none;}
 </style>

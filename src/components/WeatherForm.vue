@@ -1,12 +1,12 @@
 <template>
   <!-- Форма - модал  -->
-          <form class="location-form"  @submit="submitForm">
-            <button class="location-form-close-modal" @click="closeModal">
+          <form class="app__container__weather-card__form__location-form display-flex-center pos-relative border-blue blue-white-theme border-rad-s shadow-blue"  @submit="submitForm">
+            <button class="app__container__weather-card__form__location-form__close-modal blue-white-theme-light zero-top height-30 pos-relative border-rad-s border-none" @click="closeModal">
               <font-awesome-icon icon="times" />
             </button>
            <h2>Change city:</h2>
-            <input type="text" class="location-form-city" placeholder="City" v-model="city" name="city">
-            <button type="submit" class="location-form-get-location-btn">Get weather</button>
+            <input type="text" class="app__container__weather-card__form__location-form__city-input font-100-presents height-30 full-width border-none border-rad-s shadow-blue-focus" placeholder="City" v-model="city" name="city">
+            <button type="submit" class="app__container__weather-card__form__location-form__btn cursor-pointer blue-white-theme-light font-100-presents height-30 full-width border-none border-rad-s shadow-blue-focus">Get weather</button>
           </form>
 </template>
 
@@ -29,59 +29,24 @@ export default {
   }
 }
 </script>
-<style scoped>
-  .location-form {
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #3269c4;
+<style>
+.app__container__weather-card__form__location-form {
     max-width: 100%;
     max-height: 100%;
-    background: #3269c4;
-    color: #FFF;
-    border: #3269c4 solid 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
   }
-.location-form-close-modal{
+.app__container__weather-card__form__location-form__close-modal{
   align-self: flex-end;
-  position: relative;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  border: none;
-  background: cornflowerblue;
-  color: #FFFFFF;
   font-size: 0.9em;
   padding: 0.3em;
   margin: 0.5em 0;
 }
-.location-form-city{
-  width: 100%;
-  height: 30px;
+.app__container__weather-card__form__location-form__city-input{
   margin: 1em;
   padding: 10px;
-  border: none;
-  border-radius: 3px;
-  font-size: 100%;
 }
-.location-form-city:focus, .location-form-get-location-btn:focus{
-  outline: 0;
-  box-shadow: 0 0 10px cornflowerblue;
-}
-.location-form-get-location-btn{
+.app__container__weather-card__form__location-form__btn{
   cursor: pointer;
-  width: 100%;
-  height: 30px;
   padding: 5px;
-  font-family: inherit;
-  font-size: 100%;
   font-weight: 500;
-  border: none;
-  border-radius: 3px;
-  background: cornflowerblue;
-  color: #FFFFFF;
 }
 </style>

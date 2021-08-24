@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div class="container">
-      <div class="weather-card">
-        <div v-if="!showForm" class="weather-card-main">
+    <div class="app__container display-flex-center">
+      <div class="app__container__weather-card pos-relative border-rad-s blue-white-theme border-blue shadow-blue">
+        <div v-if="!showForm" class="app__container__weather-card__main full-size">
           <CallForm @open-modal="openModal" />
           <WeatherData
               :condition = 'condition'
@@ -15,7 +15,7 @@
               :location="location"
           />
         </div>
-      <div v-if="showForm" class="weather-card-form">
+      <div v-if="showForm" class="app__container__weather-card__form full-size">
     <WeatherForm @close-modal="closeModal" @change-city="changeCity"/>
       </div>
       </div>
@@ -41,22 +41,20 @@ export default {
       city: localStorage.getItem("city") ? localStorage.getItem("city") : "London",
       weatherAPIKey: '24a69fb88b7345278bb72458202703',
       // Данные с API
-      condition: "",
+      condition: "Misty",
       icon: "",
       temperature: 0,
       feelsLike: 0,
       humidity: 0,
-      windDirection: "",
+      windDirection: "SWS",
       windSpeed: 0,
-      location: ""
+      location: localStorage.getItem("city") ? localStorage.getItem("city") : "London"
     }
   },
   methods: {
     getData: async function (){
           await fetch(`https://api.weatherapi.com/v1/current.json?key=${this.weatherAPIKey}&q=${this.city}`)
-            .then((res) => {
-              return res.json()
-            })
+            .then((res) => {return res.json()})
             .then((data) => {
               this.location = data.location.region;
               this.condition = data.current.condition.text;
@@ -69,12 +67,8 @@ export default {
             });
           localStorage.setItem("city", this.city)
     },
-    openModal: function (){
-    this.showForm = true
-    },
-    closeModal: function (){
-      this.showForm = false
-    },
+    openModal(){this.showForm = true},
+    closeModal(){this.showForm = false},
     changeCity(newCity){
       // Получение запроса на данные с другого города, закрытие формы по завершению
       this.city = newCity;
@@ -84,7 +78,7 @@ export default {
     }
   },
   // Вызов по загрузке
-  created: function() {
+  created(){
     this.getData()
   }
 }
@@ -100,33 +94,50 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
  html, body, #app {
   width: 100%;
   height: 100%;
 }
-.container {
-  min-width: 100%;
-  min-height: 100%;
+ .zero-top{top: 0}
+.blue-white-theme{
+  background: #3269c4;
+  color: #FFFFFF;
+}
+.blue-white-theme-light{
+  background: #6da6e0;
+  color: #ffffff;
+}
+.pos-relative{position: relative}
+.border-rad-s {border-radius:3px}
+.border-blue{border: #3269c4 solid 3px;}
+.border-none{border: none}
+.shadow-blue-focus:focus{
+  outline: 0;
+  box-shadow: 0 0 10px cornflowerblue;
+}
+.shadow-blue{box-shadow: 0 0 10px #3269c4;}
+.display-flex-center{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
-.container .weather-card {
-  position: relative;
-  border-radius: 5px;
-  box-shadow: 0 0 10px cornflowerblue;
+.full-width{width: 100%;}
+.height-30{height: 30px;}
+.font-100-presents{font-size: 100%}
+.cursor-pointer{cursor:pointer;}
+
+.app__container {
+  min-width: 100%;
+  min-height: 100%;
+}
+.app__container__weather-card {
   max-width: 100%;
   max-height: 100%;
-  background: #3269c4;
-  color: #FFF;
-  border: #3269c4 solid 3px;
   justify-self: center;
-
 }
-.weather-card-main, .weather-card-form {
+.full-size {
   width: 100%;
   height: 100%;
 }
