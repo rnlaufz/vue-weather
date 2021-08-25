@@ -29,24 +29,24 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
 .app__container__weather-card__form__location-form {
     max-width: 100%;
     max-height: 100%;
-  }
-.app__container__weather-card__form__location-form__close-modal{
+  &__close-modal{
   align-self: flex-end;
   font-size: 0.9em;
   padding: 0.3em;
   margin: 0.5em 0;
 }
-.app__container__weather-card__form__location-form__city-input{
+  &__city-input{
   margin: 1em;
   padding: 10px;
 }
-.app__container__weather-card__form__location-form__btn{
+  &__btn{
   cursor: pointer;
   padding: 5px;
   font-weight: 500;
+}
 }
 </style>

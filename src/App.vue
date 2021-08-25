@@ -84,7 +84,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 *{
   margin: 0;
   padding: 0;
@@ -99,7 +99,7 @@ export default {
   width: 100%;
   height: 100%;
 }
- .zero-top{top: 0}
+.zero-top{top: 0}
 .blue-white-theme{
   background: #3269c4;
   color: #FFFFFF;
@@ -127,15 +127,15 @@ export default {
 .height-30{height: 30px;}
 .font-100-presents{font-size: 100%}
 .cursor-pointer{cursor:pointer;}
-
 .app__container {
   min-width: 100%;
   min-height: 100%;
-}
-.app__container__weather-card {
-  max-width: 100%;
-  max-height: 100%;
-  justify-self: center;
+  text-align: center;
+  &__weather-card {
+    max-width: 100%;
+    max-height: 100%;
+    justify-self: center;
+  }
 }
 .full-size {
   width: 100%;
